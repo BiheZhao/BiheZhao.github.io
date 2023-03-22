@@ -1,2 +1,264 @@
-<p>Hello</p>
-<p>This is my personal website. </p>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV template</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--Montserrat font-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
+  </head>
+  <body>   
+    <section>
+      <!-- MOBILE NAVIGATION -->
+      <div class="w3-container w3-padding-16 w3-border-bottom w3-hide-medium w3-hide-large">
+        <!-- <a href="#home" class="w3-bar-item w3-button w3-hover-none">CURRICULUM VITAE</a> -->
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleNavigation()">&#9776;</a>
+      </div>
+      <div id="mobile-nav" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-sticky">
+        <!-- <a href="#contact" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">CONTACT</a>
+          <a href="#publications" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">PUBLICATIONS</a>
+          <a href="#experience" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">EXPERIENCE</a>
+        <a href="#projects" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">PROJECTS</a>
+          <a href="#competitions" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">COMPETITIONS</a>
+          <a href="#awards" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">AWARDS</a>
+          <a href="#about" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px 
+          !important;" onclick="toggleNavigation()">ABOUT</a> -->
+        <a href="#about" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">ABOUT</a>
+        <a href="#publications" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">PUBLICATIONS</a>
+        <a href="#experience" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">EXPERIENCE</a>
+        <a href="#projects" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">PROJECTS</a>
+        <a href="#competitions" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">COMPETITIONS</a>
+        <a href="#awards" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">AWARDS</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">CONTACT</a>
+      </div>
+
+      <!-- SOCIAL SECTION -->
+      <section class="image-section w3-quarter w3-fixed w3-padding-small">
+        <!--IMAGE/AVATAR-->
+        <img src="avatar.jpg" class="w3-circle w3-border w3-border-sand" style="border-width: 3px !important;"/>
+        <!--SCIAL NETWORK BUTTONS-->
+        <div class="links w3-margin-top w3-padding-small">
+          
+          
+          <ul class="w3-ul" style="font-weight: 500;color:white;">
+            <h2 style="color:white;">Bihe Zhao</h2>
+              <li><a href="bihezhao@buaa.edu.cn" style="font-weight: 500;color:white;"> Email </a></li>
+              <li><a href="https://github.com/BiheZhao" style="font-weight: 500;color:white;"> GitHub </a></li>
+              <li><a href="https://scholar.google.com/citations?user=l7yrbtYAAAAJ" style="font-weight: 500;color:white;"> Google scholar </a></li>
+          </ul>
+        </div>
+        <!--CV DOWNLOAD BUTTON-->
+        <div class="w3-container w3-padding-16">
+          <a href="./Bihe_Zhao_CV.pdf" class="w3-amber w3-hover-amber w3-button w3-round-small w3-hover-deep-orange w3-padding-large" target="_blank" download="resume.pdf">
+            <i data-feather="arrow-down" style="vertical-align: -0.35em;"></i>
+            <span class="w3-margin-left download-text">DOWNLOAD CV</span>
+          </a>
+        </div>
+      </section>
+
+      <!--CV CONTENT SECTION-->
+      <section class="w3-threequarter w3-padding-large w3-right">
+        <!--DESKTOP NAVIGATION-->
+        <div class="w3-container w3-padding-large w3-border-bottom w3-hide-small">
+          <!-- <a href="#home" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green">CURRICULUM VITAE</a> -->
+          <a href="#about" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">ABOUT</a>
+          <a href="#publications" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">PUBLICATIONS</a>
+          <a href="#experience" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">EXPERIENCE</a>
+          <!-- <a href="#education" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">EDUCATION</a> -->
+          <a href="#projects" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">PROJECTS</a>
+          <a href="#competitions" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">COMPETITIONS</a>
+          <a href="#awards" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">AWARDS</a>
+          <a href="#contact" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">CONTACT</a>        
+        </div>
+        <!-- <div class="content-container w3-margin-top-2"> -->
+          <!-- HOME SECTION
+          <div id="" class="home w3-container w3-margin-top-4 w3-cursive" align="w3-center">
+            <!-- <p style="font-style: italic; font-size:x-large;">"The mind is the limit. When you face your struggles, you overcome them."</p> -->
+            <!-- <h2>Bihe Zhao</h2>
+            <p></p>
+          </div> -->
+          <!--ABOUT SECTION-->
+          <div id="about" class="w3-container w3-margin-bottom-2 w3-cursive w3-large">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">ABOUT</h2>
+            <p class="w3-margin-top-2"> 
+              I am a Master student at School of Cyber Science and Technology of Beihang University, advised by Professor Zhenyu Guan and Song Bian.
+              I received my bachelor degree at School of Cyber Science and Technology of Beihang University.
+            </p>
+            <p class=""> 
+              My research interest lies in machine learning security, especially the pricacy and robustness of deep neural networks models.
+            </p>
+          </div>
+
+          <!--EDUCATION-->
+          <!-- <div id="education" class="w3-container w3-margin-top-20-percent w3-cursive">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">Education</h2>
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <div class="">
+                  <h4>College diploma, College of management, Houston</h4>
+                  <p>October 2008 - July 2013 </p>
+                  <h4>Highschool diploma, XYZ Highschool, Houston</h4>
+                  <p>October 2004 - July 2008 </p>
+              </div>
+            </div>
+          </div> -->
+
+          <!--PUBLICATIONS-->
+          <div id="publications" class="w3-container w3-margin-bottom-2 w3-cursive">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">PUBLICATIONS</h2>
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <div class="">
+                  <h4>SEEKER: Query-Efficient Model Extraction via Semi-Supervised Public Knowledge Transfer</h4>
+                  <p><b>Bihe Zhao</b>, Zhenyu Guan, Yanting Zhang, Xianglun Leng, Song Bian</p>
+                  <p>Under review at ICCV 2023</p>
+                  <ul class="w3-ul" style="font-weight: 500;">
+                    
+                    <li>In this work, we propose a two-stage query-efficient model extraction framework that can extract a black-box model with a small number of queries. 
+                      First, by using our proposed augmentation invariant unsupervised training scheme, the substitute model is trained to learn generalizable feature representations from the unannotated public dataset. 
+                      Then, during the online stage, we design an aggregated query generator to craft information-rich queries merging multiple input data in the unannotated public datasets. 
+                      By conducting thorough experiments, we show that our method can reduce the query budget by more than 50× for attaining the same level of attack success rate when compared to the state-of-the-art model extraction attacks. 
+                      Additionally, SEEKER is able to achieve as high as 93.97% prediction accuracy while retaining high query-efficiency. 
+                  </ul>
+                  <!-- <li>Under review at ICCV 2023</li> -->
+        
+                  <h4>New Finding and Unified Framework for Fake Image Detection</h4>
+                  <p>Xin Deng<sup>1</sup>, <b>Bihe Zhao</b><sup>1</sup>, Zhenyu Guan, Mai Xu</p>
+                  <p>IEEE Signal Processing Letters</p>
+                  <ul class="w3-ul" style="font-weight: 500;">
+                    <li>
+                      [<a href="https://ieeexplore.ieee.org/document/10041767" style="font-weight: 500;">Paper</a>]
+                      [<a href="https://github.com/BiheZhao/NAFID" style="font-weight: 500;">Code</a>]</li>
+                    <li>Recently, fake face images generated by generative adversarial network (GAN) have been widely spread in social networks, raising serious social concerns and security risks. 
+                      To identify the fake images, the top priority is to find what properties make the fake images different from the real images. In this letter, we reveal an important observation about real/fake images, i.e., the GAN generated fake images contain stronger non-local self-similarity than the real images. 
+                      Motivated by this observation, we propose a simple yet effective non-local attention based fake image detection network, namely NAFID, to distinguish GAN generated fake images from real images. Specifically, we develop a non-local feature extraction (NFE) module to extract the non-local features of the real/fake images, followed by a multi-stage classification module to distinguish the images with the extracted non-local features. Experimental results on various datasets demonstrate the superiority of our NAFID over state-of-the-art (SOTA) face forgery detection methods. 
+                      More importantly, since the NFE module is independent from classification, we can plug it into any other forgery detection models. The results show that the NFE module can consistently improve the detection accuracy of other models, which verifies the universality of the proposed method.</li>
+                  </ul>
+
+                  <h4>ARMOR: Differential Model Distribution for Adversarially Robust Federated Learning</h4>
+                  <p>Yanting Zhang, Jianwei Liu, Zhenyu Guan, <b>Bihe Zhao</b>, Xianglun Leng, Song Bian</p>
+                  <p>Electronics</p>
+                  <ul class="w3-ul" style="font-weight: 500;">
+                    <li>In this work, we formalize the concept of differential model robustness (DMR), a new property for ensuring model security in federated learning (FL) systems. For most conventional FL frameworks, all clients receive the same global model. If there exists a Byzantine client who maliciously generates adversarial samples against the global model, the attack will be immediately transferred to all other benign clients. To address the attack transferability concern and improve the DMR of FL systems, we propose the notion of differential model distribution (DMD) where the server distributes different models to different clients. As a concrete instantiation of DMD, we propose the ARMOR framework utilizing differential adversarial training to prevent a corrupted client from launching white-box adversarial attack against other clients, for the local model received by the corrupted client is different from that of benign clients. Through extensive experiments, we demonstrate that ARMOR can significantly reduce both the attack success rate (ASR) and average adversarial transfer rate (AATR) across different FL settings. For instance, for a 35-client FL system, the ASR and AATR can be reduced by as much as 85% and 80% over the MNIST dataset.</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          <!--EXPERIENCE-->
+          <div id="experience" class="w3-container w3-container w3-margin-bottom-2 w3-cursive">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">EXPERIENCE</h2>
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+
+              <!--EMPLOYMENT HISTORY SECTION-->
+              <!-- <h3 class="w3-border-amber">Professional Experience</h3> -->
+              <div class="">
+                <h4>Research Intern at SenseTime Technology</h4>
+                <p>01/2022 - Present</p>
+                <ul class="w3-ul" style="font-weight: 500;">
+                  <li>Proposed a query-efficient model extraction attack based on public datasets that outperforms state-of-the-art model extraction attacks by a large margin</li>
+                  <!-- <li>Designed an augmentation invariant unsupervised training scheme to effectively extract information from public datasets</li>
+                  <li>Proposed an aggregated query generator based on multi-input autoencoder to craft information-extracting queries</li> -->
+                  <li>Implemented a Pytorch project with more than 4,000 lines, will be open source</li>
+                </ul>
+              </div>
+              <div class="">
+                <h4>Backend Development Internship at ByteDance Technology</h4>
+                <p>08/2020 - 01/2020 </p>
+                <ul class="w3-ul" style="font-weight: 500;">
+                  <li>Assisted in the development of data annotation and management platform</li>
+                  <li>Developed and improved an alarm center that has more than 20,000 rules to detect unusual data traffic</li>
+                  <li>Wrote more than 5,000 lines of code with Go</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!--PROJECTS-->
+          <div id="projects" class="w3-container w3-container w3-margin-bottom-2 w3-cursive">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">PROJECTS</h2>
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <div class="">
+                  <h4>Feature Reconstruction Attack in Split Learning</h4>
+                  <p>October 2022 - now </p>
+                  <ul class="w3-ul" style="font-weight: 500;">
+                    <li>Developing a feature reconstruction attack against vertical split learning to recover the private datasets of the clients</li>
+                    <li>This project is supported by Ant Group</li>
+                  </ul>
+                  <!-- <li>Developing a feature reconstruction attack against vertical split learning to recover the private datasets of the clients</li>
+                  <li>This project is supported by Ant Group</li> -->
+              </div>
+            </div>
+          </div>
+
+          <!--COMPETITIONS-->
+          <div id="competitions" class="w3-container w3-container w3-margin-bottom-2 w3-cursive">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">COMPETITIONS</h2>
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <div class="">
+                  <h4>Face shifting Detection based on Video Watermarking and PUF</h4>
+                  <p>First Prize, 12th National College Student Information Security Contest (top 8%)</p>
+                  <ul class="w3-ul" style="font-weight: 500;">
+                    <li>Utilized OpenCV to apply video watermarking based on DCT (Discrete Cosine Transform)</li>
+                    <li>Detected face shifting operation via NCC (Normalized Cross-Correlation) analysis of two watermark images extracted from videos before and after face shifting</li>
+                    <li>Used Raspberry Pi to extract PUF (Physical Unclonable Function) information from SRAM to verify the video watermarking</li>
+                    <li>Implemented a pipeline from video collection to video/image processing</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          <!--AWARDS-->
+          <div id="awards" class="w3-container w3-container w3-margin-bottom-2 w3-cursive">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">AWARDS</h2>
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <ul class="w3-ul" style="font-weight: 500;">
+                  <li>First Prize, 12th National College Student Information Security Contest (top 8%)</li>
+                  <li>Excellent Student of Beijing University of Aeronautics and Astronautics (top 5%)</li>
+                  <li>First Prize, Academic Excellence Award (top 5%)</li>
+                  <li>Outstanding Student President of Beijing University of Aeronautics and Astronautics (top 4%)	</li>
+              </ul>
+            </div>
+          </div>
+
+          <!--CONTACT SECTION-->
+          <div id="contact" class="w3-container w3-container w3-margin-bottom-2 w3-cursive">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">CONTACT</h3>
+            <div class="w3-margin-top-2" style="font-weight: 500;">
+              <p>Address: School of Cyber Science and Technology, Beihang University, Beijing, China</p>
+              <p>E-mail: bihezhao@buaa.edu.cn</p>
+            </div>
+          </div>
+        <!-- </div> -->
+
+        <!--FOOTER-->
+        <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+        <footer class="w3-container w3-border-top w3-center w3-margin-top-4">
+          <p>© 2023 - Bihe Zhao</p>
+        <!-- End footer -->
+        </footer>
+
+        <!--END OF CV SECTION-->
+      </section>      
+    </section>
+    <script>
+      // Function to toggle mobile navigation
+      function toggleNavigation() {
+        let nav = document.getElementById("mobile-nav");
+        if (nav.classList.contains('w3-show')) {
+          nav.classList.remove('w3-show');
+        } else { 
+          nav.classList.add('w3-show');
+        }
+      }
+    </script>
+    <script>
+      // Script to load feather icons
+      feather.replace()
+    </script>
+  </body>
+</html>
