@@ -35,8 +35,8 @@ body * {
   }
   
   .image-section img {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 40%;
+    max-height: 40%;
     margin-top: 50px !important;
     object-fit: cover;
   }
@@ -198,8 +198,8 @@ body * {
     }
   
     .image-section img {
-      max-width: 50%;
-      max-height: 50%;
+      max-width: 40%;
+      max-height: 40%;
     }
   
     .icon-link {
@@ -213,5 +213,21 @@ body * {
   
     .download-text {
       display: inline-block;
+    }
+
+    .width-15-percent {
+      width: 15%;
+    }
+  
+    .width-85-percent {
+      width: 85%;
+    }
+  
+    .width-20-percent {
+      width: 20%;
+    }
+  
+    .width-80-percent {
+      width: 80%;
     }
   }
