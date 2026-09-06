@@ -1,25 +1,26 @@
 # Venue abbreviations used in `abbr` fields of _bibliography/papers.bib.
 # Each gets a colored badge and a link on the publications page.
+# Palette: Nature Publishing Group (as in ggsci `pal_npg`).
 "ICLR":
   url: https://iclr.cc/
-  color: "#2a6db0"
+  color: "#3C5488" # NPG navy
 
 "ICML":
   url: https://icml.cc/
-  color: "#b31b1b"
+  color: "#E64B35" # NPG red
 
 "NeurIPS":
   url: https://neurips.cc/
-  color: "#6f42c1"
+  color: "#00A087" # NPG teal green
 
 "ECCV":
   url: https://eccv.ecva.net/
-  color: "#00897b"
+  color: "#4DBBD5" # NPG cyan
 
 "EMNLP":
   url: https://2026.emnlp.org/
-  color: "#d97706"
+  color: "#7E6148" # NPG brown
 
 "IEEE SPL":
   url: https://signalprocessingsociety.org/publications-resources/ieee-signal-processing-letters
-  color: "#2e7d32"
+  color: "#8491B4" # NPG slate blue
