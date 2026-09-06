@@ -1,0 +1,235 @@
+---
+layout: default
+---
+{% comment %}
+  Local override of the CV layout. Renders _data/cv.yml (RenderCV format) as a
+  clean single-column résumé: section headings with a thin rule, a muted date
+  column on the left, and content on the right. No cards or badges.
+{% endcomment %}
+<style>
+  .cv-clean .cv-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .cv-clean .cv-head h1 {
+    margin: 0;
+  }
+  .cv-clean .cv-label {
+    color: var(--global-text-color-light);
+    margin: 0.15rem 0 0;
+  }
+  .cv-clean .cv-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+  }
+  .cv-clean .cv-contact i {
+    color: var(--global-theme-color);
+    margin-right: 0.35rem;
+    width: 1rem;
+    text-align: center;
+  }
+  .cv-clean .cv-pdf {
+    display: inline-block;
+    border: 1px solid var(--global-theme-color);
+    color: var(--global-theme-color);
+    border-radius: 0.2rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    text-decoration: none !important;
+  }
+  .cv-clean .cv-pdf:hover {
+    background: var(--global-theme-color);
+    color: var(--global-bg-color);
+  }
+  .cv-clean .cv-summary {
+    margin: 1.25rem 0 0;
+    max-width: 48rem;
+  }
+  .cv-clean h2 {
+    font-size: 1.35rem;
+    margin: 2.25rem 0 0.9rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .cv-clean .cv-entry {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: 0.25rem 1.25rem;
+    padding: 0.55rem 0;
+  }
+  .cv-clean .cv-when {
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    padding-top: 0.15rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .cv-clean .cv-where {
+    display: block;
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+    margin-top: 0.1rem;
+  }
+  .cv-clean .cv-title {
+    font-weight: 600;
+    margin: 0;
+  }
+  .cv-clean .cv-org {
+    margin: 0.05rem 0 0;
+  }
+  .cv-clean .cv-org a {
+    color: inherit;
+  }
+  .cv-clean .cv-org a:hover {
+    color: var(--global-theme-color);
+  }
+  .cv-clean .cv-meta {
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .cv-clean .cv-note {
+    font-size: 0.95rem;
+    margin: 0.2rem 0 0;
+  }
+  .cv-clean ul.cv-highlights {
+    margin: 0.35rem 0 0;
+    padding-left: 1.1rem;
+    font-size: 0.95rem;
+  }
+  .cv-clean ul.cv-highlights li {
+    margin: 0.1rem 0;
+  }
+  .cv-clean .cv-skill {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: 0.25rem 1.25rem;
+    padding: 0.3rem 0;
+  }
+  .cv-clean .cv-skill strong {
+    font-weight: 600;
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    padding-top: 0.1rem;
+  }
+  @media (max-width: 576px) {
+    .cv-clean .cv-entry,
+    .cv-clean .cv-skill {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+    }
+  }
+</style>
+
+{% assign cv = site.data.cv.cv %}
+<div class="post cv-clean">
+  <header class="post-header cv-head">
+    <div>
+      <h1 class="post-title">{{ cv.name | default: page.title }}</h1>
+      {% if cv.label %}<p class="cv-label">{{ cv.label }}</p>{% endif %}
+    </div>
+    {% if page.cv_pdf %}
+      <a
+        class="cv-pdf"
+        {% if page.cv_pdf contains '://' %}href="{{ page.cv_pdf }}"{% else %}href="{{ page.cv_pdf | relative_url }}"{% endif %}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-file-pdf"></i>&nbsp; PDF version
+      </a>
+    {% endif %}
+  </header>
+
+  <article>
+    <ul class="cv-contact">
+      {% if cv.email %}<li><i class="fa-solid fa-envelope"></i><a href="mailto:{{ cv.email }}">{{ cv.email }}</a></li>{% endif %}
+      {% if cv.location %}<li><i class="fa-solid fa-location-dot"></i>{{ cv.location }}</li>{% endif %}
+      {% for n in cv.social_networks %}
+        {% if n.network == 'GitHub' %}
+          <li><i class="fa-brands fa-github"></i><a href="https://github.com/{{ n.username }}">github.com/{{ n.username }}</a></li>
+        {% elsif n.network == 'LinkedIn' %}
+          <li><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/{{ n.username }}/">LinkedIn</a></li>
+        {% elsif n.network == 'Google Scholar' %}
+          <li><i class="ai ai-google-scholar"></i><a href="https://scholar.google.com/citations?user={{ n.username }}">Google Scholar</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    {% if cv.summary %}
+      <p class="cv-summary">{{ cv.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+    {% endif %}
+
+    {% assign order = 'Education,Experience,Awards' | split: ',' %}
+    {% for section_title in order %}
+      {% assign entries = cv.sections[section_title] %}
+      {% if entries == nil or entries.size == 0 %}{% continue %}{% endif %}
+      <h2 id="{{ section_title | slugify }}">{{ section_title }}</h2>
+
+      {% if section_title == 'Skills' %}
+        {% for e in entries %}
+          <div class="cv-skill"><strong>{{ e.label }}</strong><span>{{ e.details }}</span></div>
+        {% endfor %}
+
+      {% elsif section_title == 'Awards' %}
+        {% for e in entries %}
+          <div class="cv-entry">
+            <div class="cv-when">{% if e.date %}{{ e.date | split: '-' | first }}{% endif %}</div>
+            <div>
+              <p class="cv-title">{% if e.url %}<a href="{{ e.url }}">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</p>
+              {% if e.awarder %}<p class="cv-meta">{{ e.awarder }}</p>{% endif %}
+              {% if e.summary %}<p class="cv-note">{{ e.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+            </div>
+          </div>
+        {% endfor %}
+
+      {% else %}
+        {% for e in entries %}
+          {% assign start = e.start_date | append: '' %}
+          {% assign finish = e.end_date | append: '' %}
+          {% assign start_y = start | split: '-' | first %}
+          {% assign finish_y = finish | split: '-' | first %}
+          {% assign start_m = start | split: '-' | slice: 1 | first %}
+          {% assign finish_m = finish | split: '-' | slice: 1 | first %}
+          {% assign months = 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec' | split: ',' %}
+          {% capture when %}
+            {%- if start_m -%}{%- assign mi = start_m | plus: 0 | minus: 1 -%}{{ months[mi] }} {% endif -%}{{ start_y }}
+            {%- if finish != '' %} – {% if finish == 'present' %}present{% else %}{%- if finish_m -%}{%- assign mi = finish_m | plus: 0 | minus: 1 -%}{{ months[mi] }} {% endif -%}{{ finish_y }}{% endif %}{% endif -%}
+          {% endcapture %}
+          <div class="cv-entry">
+            <div class="cv-when">{{ when | strip }}</div>
+            <div>
+              {% if section_title == 'Education' %}
+                <p class="cv-title">{{ e.studyType }}{% if e.area %}, {{ e.area }}{% endif %}</p>
+                <p class="cv-org">{% if e.url %}<a href="{{ e.url }}">{{ e.institution }}</a>{% else %}{{ e.institution }}{% endif %}{% if e.location %}<span class="cv-where">{{ e.location }}</span>{% endif %}</p>
+              {% else %}
+                <p class="cv-title">{{ e.position }}</p>
+                <p class="cv-org">{% if e.url %}<a href="{{ e.url }}">{{ e.company }}</a>{% else %}{{ e.company }}{% endif %}{% if e.location %}<span class="cv-where">{{ e.location }}</span>{% endif %}</p>
+              {% endif %}
+              {% if e.summary %}<p class="cv-note">{{ e.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+              {% if e.highlights %}
+                <ul class="cv-highlights">
+                  {% for h in e.highlights %}<li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+
+    <h2 id="publications">Publications</h2>
+    <p class="cv-note">See the <a href="{{ '/publications/' | relative_url }}">publications page</a> for the full list with abstracts and BibTeX.</p>
+  </article>
+</div>

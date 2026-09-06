@@ -1,0 +1,163 @@
+---
+layout: default
+---
+{% comment %}
+  Local override of al_folio_core's about layout.
+  Changes vs. upstream: name is not bold and shows the native-script name from
+  `site.name_native`; social icons sit under the profile photo instead of
+  `profile.more_info`; the large social block at the bottom is only shown when
+  `page.social` is true.
+{% endcomment %}
+<style>
+  .profile {
+    margin-top: 0.8rem; /* align photo top with the cap height of the name */
+  }
+  .post-title .name-native {
+    font-size: 0.55em;
+    font-weight: 300;
+    color: var(--global-text-color-light);
+    margin-left: 0.25rem;
+    vertical-align: baseline;
+  }
+  .profile .profile-links {
+    margin-top: 0.6rem;
+    text-align: center;
+    font-size: 1.55rem;
+    line-height: 1;
+  }
+  .profile .profile-links a {
+    display: inline-block;
+    margin: 0 0.4rem 0.35rem;
+    color: var(--global-text-color);
+  }
+  .profile .profile-links a:hover {
+    color: var(--global-theme-color);
+  }
+  .profile .profile-links img {
+    width: 1.4rem;
+    height: 1.4rem;
+    vertical-align: middle;
+  }
+  @media (max-width: 575.98px) {
+    /* phones: name first, then a smaller centered photo, then the text */
+    .post {
+      display: flex;
+      flex-direction: column;
+    }
+    .post > .post-header { order: 1; text-align: center; }
+    .post > .profile {
+      order: 2;
+      float: none !important;
+      width: 62%;
+      margin: 0.25rem auto 1.25rem;
+    }
+    .post > article { order: 3; }
+    .profile .profile-links { font-size: 1.35rem; }
+  }
+  @media (max-width: 575.98px) {
+  }
+  /* Publication list: keep the badge + thumbnail column usable at every width.
+     The theme's default (2 of 12 grid columns) gets too small below ~1000px. */
+  .publications .row > .abbr { padding-right: 0; }
+  @media (max-width: 575.98px) {
+    .publications .row > .abbr { flex: 0 0 30%; max-width: 30%; }
+    .publications .row > .col-sm-8,
+    .publications .row > .col-sm-10 { flex: 0 0 70%; max-width: 70%; }
+    .publications .row > .col-sm-8 .title,
+    .publications .row > .col-sm-10 .title { font-size: 0.95rem; }
+  }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .publications .row > .abbr { flex: 0 0 26%; max-width: 26%; }
+    .publications .row > .col-sm-8,
+    .publications .row > .col-sm-10 { flex: 0 0 74%; max-width: 74%; }
+  }
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .publications .row > .abbr { flex: 0 0 22%; max-width: 22%; }
+    .publications .row > .col-sm-8,
+    .publications .row > .col-sm-10 { flex: 0 0 78%; max-width: 78%; }
+  }
+  @media (min-width: 992px) {
+    .publications .row > .abbr { flex: 0 0 18%; max-width: 18%; }
+    .publications .row > .col-sm-8,
+    .publications .row > .col-sm-10 { flex: 0 0 82%; max-width: 82%; }
+  }
+</style>
+<div class="post">
+    {% if page.profile %}
+    <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      {% if page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% if page.profile.image_circular %}
+          {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+        {% else %}
+          {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+        {% endif %}
+        {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+        {%
+          include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+          cache_bust=true
+        %}
+      {% endif %}
+      {% if page.profile.links != false %}
+        <div class="profile-links">{% social_links %}</div>
+      {% endif %}
+      {% if page.profile.more_info %}
+        <div class="more-info">{{ page.profile.more_info }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+      {% if site.name_native %}
+        <span class="name-native">({{ site.name_native }})</span>
+      {% endif %}
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  <article>
+    <div class="clearfix">{{ content }}</div>
+
+    {% if page.announcements and page.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+      </h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
+    {% endif %}
+
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% social_links %}</div>
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% if site.plugins contains 'al_newsletter' %}
+        {% include plugins/al_newsletter_form_center_margin.liquid %}
+      {% else %}
+        {% include newsletter.liquid center=true %}
+      {% endif %}
+    {% endif %}
+  </article>
+</div>

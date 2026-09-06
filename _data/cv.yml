@@ -1,0 +1,84 @@
+# CV data in RenderCV format. Rendered on /cv/ by the al_folio_cv plugin.
+# Reference: https://docs.rendercv.com/user_guide/yaml_input_structure/
+cv:
+  name: Bihe Zhao
+  label: Ph.D. Student in Trustworthy Machine Learning
+  email: bihe.zhao@cispa.de
+  location: St. Ingbert, Germany
+  image: ""
+  summary: Third-year Ph.D. student at CISPA Helmholtz Center for Information Security. Research interests are trustworthy AI, data provenance for generative models, watermarking, and AI privacy.
+
+  social_networks:
+    - network: GitHub
+      username: BiheZhao
+    - network: LinkedIn
+      username: bihe-zhao-826083320
+    - network: Google Scholar
+      username: l7yrbtYAAAAJ
+
+  sections:
+    Education:
+      - institution: CISPA Helmholtz Center for Information Security
+        location: St. Ingbert, Germany
+        url: https://cispa.de/
+        area: Computer Science
+        studyType: Ph.D.
+        start_date: 2024
+        end_date: present
+        highlights:
+          - Co-supervised by Prof. Adam Dziedzic and Prof. Franziska Boenisch (SprintML lab).
+          - Research on data provenance, membership and dataset inference, and watermarking for generative models.
+
+      - institution: Beihang University
+        location: Beijing, China
+        url: https://ev.buaa.edu.cn/
+        area: Cyber Science and Technology
+        studyType: M.Sc.
+        start_date: 2021
+        end_date: 2024
+        highlights:
+          - Co-advised by Prof. Zhenyu Guan and Prof. Song Bian.
+
+    Experience:
+      - company: Agency for Science, Technology and Research (A*STAR)
+        position: Research Assistant
+        location: Singapore
+        start_date: 2023-07
+        end_date: 2023-11
+        highlights:
+          - Proposed a drag-style editing scheme for neural radiance fields (NeRF) under user specification.
+          - Designed a matching algorithm to enforce multi-view consistency of the edited scene.
+          - Developed a generative model that edits the scene under correspondence supervision across views.
+
+      - company: SenseTime Research
+        position: Research Intern
+        location: Beijing, China
+        start_date: 2022-01
+        end_date: 2023-04
+        highlights:
+          - Proposed a query-efficient model extraction attack based on public datasets that outperforms prior attacks by a large margin.
+          - Revealed a non-local self-similarity signal for face forgery detection and built a unified detection framework around it (IEEE SPL).
+
+      - company: ByteDance
+        position: Backend Development Intern
+        location: Beijing, China
+        start_date: 2020-08
+        end_date: 2021-01
+        highlights:
+          - Contributed to a data annotation and management platform.
+          - Developed and improved an alarm center with over 20,000 rules for detecting unusual data traffic, in Go.
+
+    Awards:
+      - title: First Prize, 12th National College Student Information Security Contest
+        date: 2019
+        awarder: National College Student Information Security Contest (top 8%)
+        summary: Face-swap detection based on video watermarking and physical unclonable functions.
+
+      - title: First Prize, Academic Excellence Award
+        awarder: Beihang University (top 5%)
+
+      - title: Excellent Student
+        awarder: Beihang University (top 5%)
+
+      - title: Outstanding Student President
+        awarder: Beihang University (top 4%)
