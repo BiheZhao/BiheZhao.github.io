@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: bihe_zhao_2026.jpg
   image_circular: false # crops the image to make it circular
   links: true # social icons under the photo
 
