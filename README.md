@@ -14,7 +14,7 @@ Personal academic website of Bihe Zhao, built with [al-folio](https://github.com
 | What | Where |
 | --- | --- |
 | Bio text, intro paragraph | `_pages/about.md` (body). "third-year" needs a manual bump each autumn. |
-| Profile photo | `assets/img/bihe_zhao_2026.jpg` — square crop, ~1200px. |
+| Profile photo | `assets/img/photo_2026.jpg` — square crop, ~1200px. |
 | Social icons under the photo | `_data/socials.yml` — order in the file = order on the page. |
 | Publications | `_bibliography/papers.bib`. Order in the file = order on the page (within a year: first-author papers first, then most recent first). `selected = {true}` shows a paper on the home page. |
 | Paper links / buttons | bib fields: `arxiv` (ID) → "arXiv" button; otherwise `html`, `pdf`, or `doi` → "Paper" button; `code` → "Code"; `bibtex_show = {true}` → "Bib". Order is fixed: Abs, arXiv/Paper, Code, Bib. |
