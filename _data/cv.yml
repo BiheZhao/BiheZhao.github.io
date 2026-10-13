@@ -40,16 +40,6 @@ cv:
           - Co-advised by Prof. Zhenyu Guan and Prof. Song Bian.
 
     Experience:
-      - company: Agency for Science, Technology and Research (A*STAR)
-        position: Research Assistant
-        location: Singapore
-        start_date: 2023-07
-        end_date: 2023-11
-        highlights:
-          - Proposed a drag-style editing scheme for neural radiance fields (NeRF) under user specification.
-          - Designed a matching algorithm to enforce multi-view consistency of the edited scene.
-          - Developed a generative model that edits the scene under correspondence supervision across views.
-
       - company: SenseTime Research
         position: Research Intern
         location: Beijing, China
@@ -67,6 +57,15 @@ cv:
         highlights:
           - Contributed to a data annotation and management platform.
           - Developed and improved an alarm center with over 20,000 rules for detecting unusual data traffic, in Go.
+
+    Talks:
+      - title: "Agent Auditing: Identity Verification and Provenance Tracing"
+        event: ML in PL 2026, Security in Machine Learning tutorial
+        url: https://conference.mlinpl.org/2026/program#tutorial-4
+        location: Warsaw, Poland
+        date: 2026-10
+        slides: /assets/pdf/mlinpl_2026_agent_auditing.pdf
+        video: https://www.youtube.com/watch?v=0OVv5hik2a0
 
     Awards:
       - title: First Prize, 12th National College Student Information Security Contest

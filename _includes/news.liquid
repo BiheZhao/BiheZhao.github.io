@@ -1,11 +1,11 @@
-{% comment %} Local override of al_folio_core's news include: month + year only. {% endcomment %}
+{% comment %} Local override of al_folio_core's news include: month + year only, and a fixed-height scroll box on the home page. {% endcomment %}
 <div class="news">
   {% if site.news != blank %}
     {% assign news_size = site.news | size %}
     <div
       class="table-responsive"
       {% if include.limit and page.announcements.scrollable and news_size > 3 %}
-        style="max-height: 60vw"
+        style="max-height: 13.5rem; overflow-y: auto; margin-bottom: 1.5rem"
       {% endif %}
     >
       <table class="table table-sm table-borderless">

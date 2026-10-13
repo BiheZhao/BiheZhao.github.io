@@ -22,6 +22,7 @@ Personal academic website of Bihe Zhao, built with [al-folio](https://github.com
 | Venue badges (name, color, link) | `_data/venues.yml`. Colors are the Nature (NPG) palette; keep new venues in the same family. |
 | News | one Markdown file per item in `_news/`, named `YYYY-MM-DD-slug.md`. Only month and year are shown. Paper titles go in quotes and italics: `"*Title*" was accepted at **VENUE 2027**.` |
 | CV page | `_data/cv.yml` (RenderCV format). PDF at `assets/pdf/Bihe_Zhao_CV.pdf`. |
+| Talks | `Talks` section of `_data/cv.yml` (fields: `title`, `event`, `url`, `location`, `date` as `YYYY-MM`, optional `slides`, `video`), shown on the CV page. Slides go in `assets/pdf/`. Add a news item too. |
 | Favicon | `assets/img/favicon.png` (256px) and `assets/img/apple-touch-icon.png` (180px). |
 | Site metadata, fonts, feature flags | `_config.yml`. Requires a restart of the local preview to take effect. |
 
@@ -45,7 +46,7 @@ These files shadow the theme's own and are the place to change look and layout. 
 | `_layouts/about.liquid` | Home page: name not bold, Chinese name from `name_native` in `_config.yml`, photo level with the name, icons under the photo, phone layout (name centered, smaller photo), and all publication-list CSS (badge font, 2:1 thumbnails, column widths per breakpoint). |
 | `_pages/publications.md` | Same publication-list CSS as above, for the Publications page. Keep the two in sync. |
 | `_layouts/bib.liquid` | One publication entry: button order and labels only. Rest is the theme's. |
-| `_layouts/cv.liquid` | Custom clean CV layout (sections: Education, Experience, Awards). |
+| `_layouts/cv.liquid` | Custom clean CV layout (sections: Education, Experience, Talks, Awards). |
 | `_includes/header.liquid` | Navbar name not bold. |
 | `_includes/news.liquid` | News dates as month + year. |
 

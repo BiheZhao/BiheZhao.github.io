@@ -171,7 +171,7 @@ layout: default
       <p class="cv-summary">{{ cv.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
     {% endif %}
 
-    {% assign order = 'Education,Experience,Awards' | split: ',' %}
+    {% assign order = 'Education,Experience,Talks,Awards' | split: ',' %}
     {% for section_title in order %}
       {% assign entries = cv.sections[section_title] %}
       {% if entries == nil or entries.size == 0 %}{% continue %}{% endif %}
@@ -180,6 +180,28 @@ layout: default
       {% if section_title == 'Skills' %}
         {% for e in entries %}
           <div class="cv-skill"><strong>{{ e.label }}</strong><span>{{ e.details }}</span></div>
+        {% endfor %}
+
+      {% elsif section_title == 'Talks' %}
+        {% assign months = 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec' | split: ',' %}
+        {% for e in entries %}
+          {% assign d = e.date | append: '' %}
+          {% assign d_y = d | split: '-' | first %}
+          {% assign d_m = d | split: '-' | slice: 1 | first %}
+          <div class="cv-entry">
+            <div class="cv-when">{% if d_m %}{% assign mi = d_m | plus: 0 | minus: 1 %}{{ months[mi] }} {% endif %}{{ d_y }}</div>
+            <div>
+              <p class="cv-title">{{ e.title }}</p>
+              <p class="cv-org">{% if e.url %}<a href="{{ e.url }}">{{ e.event }}</a>{% else %}{{ e.event }}{% endif %}{% if e.location %}<span class="cv-where">{{ e.location }}</span>{% endif %}</p>
+              {% if e.slides or e.video %}
+                <p class="cv-note">
+                  {%- if e.slides %}<a href="{{ e.slides | relative_url }}">Slides</a>{% endif -%}
+                  {%- if e.slides and e.video %} · {% endif -%}
+                  {%- if e.video %}<a href="{{ e.video }}">Video</a>{% endif -%}
+                </p>
+              {% endif %}
+            </div>
+          </div>
         {% endfor %}
 
       {% elsif section_title == 'Awards' %}
